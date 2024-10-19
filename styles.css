@@ -1,0 +1,31 @@
+/* styles.css */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+}
+
+.face-image {
+    width: 300px; /* Adjust size as necessary */
+    height: auto;
+}
+
+#mole {
+    position: absolute;
+    width: 10px; /* Size of the mole */
+    height: 10px;
+    background-color: black; /* Mole color */
+    border-radius: 50%; /* Makes the mole round */
+    display: none; /* Hide initially */
+}
+
+button {
+    margin-top: 20px;
+}
