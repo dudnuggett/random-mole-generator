@@ -19,8 +19,8 @@ body {
 
 #mole {
     position: absolute;
-    width: 10px; /* Size of the mole */
-    height: 10px;
+    width: 3px; /* Size of the mole */
+    height: 3px;
     background-color: black; /* Mole color */
     border-radius: 50%; /* Makes the mole round */
     display: none; /* Hide initially */
