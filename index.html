@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Mole Placement</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         .container {
             position: relative;
+            display: inline-block;
         }
         #mole {
             position: absolute;
             width: 3px;
             height: 3px;
-            background-color: brown;
+            background-color: black;
             border-radius: 50%;
-            display: none; /* Hidden initially */
+            display: none;
         }
         .face-image {
-            max-width: 100%;
+            width: 300px; /* Adjust this size according to your image */
         }
     </style>
 </head>
 <body>
+
     <div class="container">
         <img src="face.png" alt="Human Head" class="face-image" id="faceImage" usemap="#faceMap">
         <div id="mole"></div>
@@ -30,10 +31,11 @@
     <button id="generateButton">Generate Mole</button>
 
     <map name="faceMap">
-        <!-- Define a polygonal area based on the coords you provided -->
-        <area shape="poly" coords="200,272,13,5" alt="Face Area" href="#">
+        <!-- Polygonal area defining the face -->
+        <area shape="poly" coords="14,87,32,34,69,8,109,2,156,11,188,44,200,86,201,131,193,189,177,225,148,257,108,276,65,256,31,220,22,187,14,132" alt="Face Area">
     </map>
 
     <script src="script.js"></script>
+
 </body>
 </html>
