@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Mole Placement</title>
     <style>
+        /* Container that wraps the face image and overlay */
         .container {
             position: relative;
             display: inline-block;
+            width: 300px; /* Adjust this to the width of your face image */
+            height: auto; /* Automatically adjusts height to match image's aspect ratio */
         }
 
         /* The face image */
         .face-image {
-            width: 300px; /* Adjust this size according to your image */
+            display: block;
+            width: 100%; /* Ensures image fits within the container */
+            height: auto;
         }
 
         /* Mole styling */
         #mole {
             position: absolute;
-            width: 5px;
-            height: 5px;
+            width: 10px;
+            height: 10px;
             background-color: black;
             border-radius: 50%;
             display: none;
@@ -28,6 +33,10 @@
         /* Overlay to highlight the polygonal face area */
         #highlight {
             position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-color: rgba(0, 0, 0, 0.15); /* Black with 15% opacity */
             clip-path: polygon(
                 14px 87px, 32px 34px, 69px 8px, 109px 2px, 156px 11px, 
@@ -35,11 +44,13 @@
                 177px 225px, 148px 257px, 108px 276px, 65px 256px, 
                 31px 220px, 22px 187px, 14px 132px
             );
-            width: 100%;
-            height: 100%;
             pointer-events: none; /* Allows clicks to pass through */
         }
 
+        /* Styling for the generate button */
+        #generateButton {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
