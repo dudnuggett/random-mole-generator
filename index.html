@@ -9,14 +9,13 @@
         .container {
             position: relative;
             display: inline-block;
-            width: 300px; /* Adjust this to the width of your face image */
-            height: auto; /* Automatically adjusts height to match image's aspect ratio */
         }
 
         /* The face image */
         .face-image {
             display: block;
-            width: 100%; /* Ensures image fits within the container */
+            width: 100%; /* Make sure the image is responsive */
+            max-width: 300px; /* Set the maximum width (adjust this according to your preference) */
             height: auto;
         }
 
@@ -56,11 +55,13 @@
 <body>
 
     <div class="container">
-        <!-- The face image -->
-        <img src="face.png" alt="Human Head" class="face-image" id="faceImage">
+        <!-- The face image with a map -->
+        <img src="face.png" alt="Human Head" class="face-image" id="faceImage" usemap="#faceMap">
 
-        <!-- The overlay to highlight the face area -->
-        <div id="highlight"></div>
+        <!-- The image map with polygon coordinates for the face area -->
+        <map name="faceMap">
+            <area shape="poly" coords="14,87,32,34,69,8,109,2,156,11,188,44,200,86,201,131,193,189,177,225,148,257,108,276,65,256,31,220,22,187,14,132" alt="Face">
+        </map>
 
         <!-- Mole placement -->
         <div id="mole"></div>
