@@ -9,6 +9,13 @@
             position: relative;
             display: inline-block;
         }
+
+        /* The face image */
+        .face-image {
+            width: 300px; /* Adjust this size according to your image */
+        }
+
+        /* Mole styling */
         #mole {
             position: absolute;
             width: 5px;
@@ -17,23 +24,39 @@
             border-radius: 50%;
             display: none;
         }
-        .face-image {
-            width: 300px; /* Adjust this size according to your image */
+
+        /* Overlay to highlight the polygonal face area */
+        #highlight {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.15); /* Black with 15% opacity */
+            clip-path: polygon(
+                14px 87px, 32px 34px, 69px 8px, 109px 2px, 156px 11px, 
+                188px 44px, 200px 86px, 201px 131px, 193px 189px, 
+                177px 225px, 148px 257px, 108px 276px, 65px 256px, 
+                31px 220px, 22px 187px, 14px 132px
+            );
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allows clicks to pass through */
         }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <img src="face.png" alt="Human Head" class="face-image" id="faceImage" usemap="#faceMap">
+        <!-- The face image -->
+        <img src="face.png" alt="Human Head" class="face-image" id="faceImage">
+
+        <!-- The overlay to highlight the face area -->
+        <div id="highlight"></div>
+
+        <!-- Mole placement -->
         <div id="mole"></div>
     </div>
-    <button id="generateButton">Generate Mole</button>
 
-    <map name="faceMap">
-        <!-- Polygonal area defining the face -->
-        <area shape="poly" coords="14,87,32,34,69,8,109,2,156,11,188,44,200,86,201,131,193,189,177,225,148,257,108,276,65,256,31,220,22,187,14,132" alt="Face Area">
-    </map>
+    <!-- Button to generate mole -->
+    <button id="generateButton">Generate Mole</button>
 
     <script src="script.js"></script>
 
